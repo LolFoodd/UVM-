@@ -1,5 +1,9 @@
 #Вариант 23
 # Загрузка константы 
+
+
+import argparse
+
 def mask(n):
     return 2**n - 1
 
@@ -31,6 +35,19 @@ def asm_abs(A: int, B: int):
     cmd |= A & mask(7)
     cmd |= (B & mask(8)) << 7
     return cmd.to_bytes(4, 'little')
+
+
+def asm(program):
+    mass = b""
+    for cmd in program:
+        mass += cmd
+    return mass
+
+
+
+#Этап 1. Перевод программы в промежуточное представление
+
+
 
 
 print("Перво. запись константы")
