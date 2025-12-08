@@ -1,0 +1,6 @@
+const(12, 7)      
+write(95, 0)       
+const(12, 3)      
+write(95, 5)       
+const(12, 0)      
+abs(85, 5)         

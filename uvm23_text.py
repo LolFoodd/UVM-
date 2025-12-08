@@ -91,8 +91,8 @@ with open(args.input, "r") as f:
         if not line or line.startswith("#"):
             continue
 
-        # Парсим строки вида: name(A, B)
-        match = re.match(r"(\w+)\s*\(\s*(\d+)\s*,\s*(\d+)\s*\)", line)
+        # Парсим строки вида: name(A, B) с поддержкой отрицательных чисел
+        match = re.match(r"(\w+)\s*\(\s*(-?\d+)\s*,\s*(-?\d+)\s*\)", line)
         if not match:
             raise ValueError(f"Неверный формат строки: {line}")
 
@@ -129,6 +129,10 @@ print(f"Размер бинарного файла: {len(asm_result)} байт")
 if args.test:
     print("Машинный код")
     print(" ".join(f"{b:02X}" for b in asm_result))
+    
+    
+    
+
     
     
     
