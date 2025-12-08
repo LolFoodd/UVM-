@@ -91,7 +91,7 @@ with open(args.input, "r") as f:
         if not line or line.startswith("#"):
             continue
 
-        # Парсим строки вида: name(A, B) с поддержкой отрицательных чисел
+       
         match = re.match(r"(\w+)\s*\(\s*(-?\d+)\s*,\s*(-?\d+)\s*\)", line)
         if not match:
             raise ValueError(f"Неверный формат строки: {line}")
